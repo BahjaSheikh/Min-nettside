@@ -18,7 +18,9 @@ export function Header() {
       <h1>{title}</h1>
       <div className="space-x-5 my-auto">
         {routes.map((route) => (
-          <Link href={route.href}>{route.title}</Link>
+          <Link href={route.href} key={route.href}>
+            {route.title}
+          </Link>
         ))}
       </div>
     </div>
