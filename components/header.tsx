@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ModeToggle } from "./mode-toggle";
 
 const routes = [
   {
@@ -12,16 +13,17 @@ const routes = [
 ];
 
 export function Header() {
-  const title = "Min nettside";
+  const title = "Bahja Sheikh";
   return (
-    <div className="bg-pink-100 p-5 boarder-b flex justify-between">
-      <h1>{title}</h1>
+    <div className="dark:bg-blue-400 bg-pink-100 p-5 boarder-b flex justify-between">
+      <h1 className="text-black">{title}</h1>
       <div className="space-x-5 my-auto">
         {routes.map((route) => (
           <Link href={route.href} key={route.href}>
             {route.title}
           </Link>
         ))}
+        <ModeToggle />
       </div>
     </div>
   );
